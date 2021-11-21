@@ -1,0 +1,11 @@
+#home {
+    width: 100vw;
+    min-height: calc(100vh - 64px);
+}
+
+.upload-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

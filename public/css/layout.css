@@ -1,0 +1,14 @@
+#nav {
+    width: 100vw;
+    height: 64px !important;
+}
+
+#nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#nav-logo-img {
+    width: 1.5rem;
+    height: auto;
+}
