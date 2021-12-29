@@ -15,13 +15,14 @@ class CreateVideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('file');
-            $table->integer('user-id');
+            $table->string('uuid');
+            $table->string('extension');
+            $table->integer('user_id');
             $table->string('title');
             $table->text('description');
-            $table->string('uuid_route');
+            
             $table->integer('size');
-            $table->integer('duration');
+            $table->integer('duration')->default(-1);
             $table->timestamps();
         });
     }

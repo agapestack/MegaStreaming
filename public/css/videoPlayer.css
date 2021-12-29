@@ -1,0 +1,13 @@
+#video-player {
+    min-height: calc(100vh - 64px);
+}
+
+.video-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* make video-js fit container */
+/* .vjs-tech {
+  width: 100%;
+} */

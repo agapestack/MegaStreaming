@@ -1,4 +1,5 @@
-@extends('layouts.app')
+{{-- Verfication d'email pas utiliser(on a pas configurer le service mail) --}}
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -25,4 +26,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

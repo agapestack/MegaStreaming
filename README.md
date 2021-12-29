@@ -1,20 +1,47 @@
 # MegaStream Documentation
 ---
 ## Installation
-> Dependancies: Composer (php package manager), Nodejs (with npm, node package manager), php8, Postgresql (with pgAdmin4)
+> Dependancies: Composer (php package manager), Nodejs (with npm, node package manager), php >= 7.4 / 8, Postgresql
 
 *Install Dependencies*
 ```bash
 npm install
 composer install
 ```
+```bash
+#ffmpeg is used to generate thumbnail
+sudo apt-get update
+sudo apt-get install ffmpeg
+```
+
+> Note: for windows user make sure to add path to ffmpeg and ffprobe binaries in your .env
+```
+FFMPEG_BINARIES='PATH_TO_FFMPEG_BINARIES'
+FFPROBE_BINARIES='PATH_TO_FFPROBE_BINARIES'
+```
 
 *Database Connection*
 >Edit a .env files to configure your database connection (see .env.example)
+>note: We used pgsql w/ pgAdmin4
 
 *Run Migration*
 ```bash
 php artisan migrate
+```
+
+*Seeding Database (important for Categories Table)*
+```bash
+php artisan db:seed --class=CategorieSeeder
+```
+
+*Create storage link*
+```bash
+php artisan storage:link
+```
+
+*Launching Queue Work (don't forget timeout, transcoding to HLS can take a lot of time*
+```bash
+php artisan queue:work --timeout=600
 ```
 
 *Generate Key for application*
@@ -26,6 +53,18 @@ php artisan config:cache
 *Launch Local Server*
 ```bash
 php artisan serve
+```
+
+## Usefull cmd
+```bash
+# rollback latest migration
+php artisan migrate:rollback
+# rollback w/ step
+php artisan migrate:rollback --step=5
+# rollback all
+php artisan migrate:reset
+# Refresh the database and run all database seeds...
+php artisan migrate:refresh --seed
 ```
 
 ---

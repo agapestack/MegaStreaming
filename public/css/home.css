@@ -1,11 +1,36 @@
-#home {
-    width: 100vw;
-    min-height: calc(100vh - 64px);
+#main-wrapper {
+    margin: 0;
 }
 
-.upload-component {
+.categories-navbar {
+    margin: .5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.category_bar {
+    height: 1px;
+    width: 95%;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+.category-link {
+    margin: .2rem 1rem;
+}
+
+.category-wrapper {
+    margin: 0 .5rem;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-wrapper a {
+    margin: 0 3rem;
+    font-size: 1.5rem;
 }

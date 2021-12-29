@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Video;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
+// MODELS
+use App\Models\Categorie;
 
 class HomeController extends Controller
 {
@@ -24,22 +29,50 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // HOMEPAGE SEND CATEGORY && RECOMMENDATIONS DATA
+        $categories = Categorie::all();
+
+        return view('home', ['categories' => $categories]);
     }
 
-    public function store(Request $request) {
-        $data = new Video();
+    public function getUserVideos(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $user_uploads = DB::table('videos')->where('user_id', $user_id)->get();
 
-        $file = $request->file;
-        $filename = time().'.'.$file->getClientOriginalExtension();
-        $request->file->move('assets/uploads', $filename);
+        return view('userVideos', ['user_uploads' => $user_uploads]);
+    }
 
-        $data->file=$filename;
-        $data->title=$request->title;
-        $data->description=$request->description;
+    public function getLatestVideos(Request $request)
+    {
+        $videoCollection = new \Illuminate\Database\Eloquent\Collection;
 
-        $data->save();
+        $videoCollection = DB::table('videos')->where('processed', true)
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->distinct()
+            ->get();
 
-        return redirect()->back();
+
+        // Log::info($videoCollection);
+
+        return view('home', ['videos' => $videoCollection]);
+    }
+
+    public function getLatestVideosByCategory(Request $request, $category_name)
+    {
+        $videoCollection = new \Illuminate\Database\Eloquent\Collection;
+        $category = DB::table('categories')->where('name', $category_name)->first();
+
+        Log::info($category->name . "\t" . $category->id);
+
+        $videoCollection = DB::table('videos')->where('processed', true)
+            ->where('category_id', $category->id)
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->distinct()
+            ->get();
+
+        return view('home', ['videos' => $videoCollection, 'category_name' => $category_name]);
     }
 }

@@ -5,6 +5,9 @@
  */
 
 require('./bootstrap');
+require('video.js');
+// require('videojs-hls-quality-selector');
+// require('videojs-contrib-hls');
 
 window.Vue = require('vue').default;
 
