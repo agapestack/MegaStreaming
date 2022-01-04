@@ -49,9 +49,10 @@ class VideoController extends Controller
     public function getVideoByUuid(Request $request, $uuid)
     {
         // Log::info($uuid);
-        // Log::info(gettype($uuid));
 
-        $video = Video::where('uuid', $uuid)->first()->get();
+        $video = Video::where('uuid', $uuid)->first();
+
+        Log::info($video);
 
         return view('videoPlayer', ['video' => $video]);
     }
