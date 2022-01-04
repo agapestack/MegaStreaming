@@ -52,10 +52,12 @@ class VideoController extends Controller
     public function getVideoByUuid(Request $request, $uuid)
     {
         // Log::info($uuid);
-        // Log::info(gettype($uuid));
 
         //TODO comportement lorsque l'uuid en question n'existe pas en BDD: https://laravel.com/docs/7.x/eloquent#retrieving-single-models
         $video = Video::where('uuid', $uuid)->first();
+
+        Log::info($video);
+
 
         return view('videoPlayer', ['video' => $video]);
     }
