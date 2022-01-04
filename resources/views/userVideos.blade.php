@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @dd($user_uploads)
+    {{-- @dd($user_uploads) --}}
 
     <div id="user-videos">
         <div class="section-header">
