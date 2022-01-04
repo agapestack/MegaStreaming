@@ -31,6 +31,8 @@ class VideoController extends Controller
         $video->category_id = $request->get('videoCategory');
         $video->filepath = $video->uuid . "." . $video->extension;
         $video->disk = 'local';
+        //TODO pour éviter de répeter des lignes: https://laravel.com/docs/7.x/eloquent#mass-assignment
+        // exemple: Video::create(['propriété1' => $valeur1, 'propriété2' => $valeur2,])
 
         $request->file('file')->storeAs(
             'videos',
@@ -46,12 +48,14 @@ class VideoController extends Controller
         return redirect()->back();
     }
 
+    //TODO typer le paramètre uuid
     public function getVideoByUuid(Request $request, $uuid)
     {
         // Log::info($uuid);
         // Log::info(gettype($uuid));
 
-        $video = Video::where('uuid', $uuid)->first()->get();
+        //TODO comportement lorsque l'uuid en question n'existe pas en BDD: https://laravel.com/docs/7.x/eloquent#retrieving-single-models
+        $video = Video::where('uuid', $uuid)->first();
 
         return view('videoPlayer', ['video' => $video]);
     }
@@ -61,6 +65,7 @@ class VideoController extends Controller
 
         // TODO: add category specification
 
+        // TODO inutile, en dessous y'a un if et un else donc la collection est forcément crée
         $videoCollection = new \Illuminate\Database\Eloquent\Collection;
 
         $search = $request->text;
@@ -69,8 +74,10 @@ class VideoController extends Controller
         // Log::info($text);
         // Log::info($category_id);
 
+        //TODO simplifiable avec une query conditionnelle when(): https://laraveldaily.com/less-know-way-conditional-queries/
         if (isset($category_id)) {
             // Log::info("category specified");
+            //TODO pagination, une base pour les resultats de recherche (et pour les listes d'éléments de façon generale)
             $videoCollection =
                 Video::where('title', 'ILIKE', '%' . $search . '%')
                 ->where('category_id', $category_id)
