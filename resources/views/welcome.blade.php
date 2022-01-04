@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @push('welcome')
+        <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+    @endpush
+
     {{-- @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -20,7 +24,7 @@
     {{-- Welcome Page d'Elise --}}
     <div class="welcome-container">
         <section id="hero">
-            <div class="section-container" >
+            <div class="section-container">
                 <div class="hero">
                     <h1>Apprendre ou vous divertir, ne cherchez plus, Megastreamez.</h1>
                     <h2>

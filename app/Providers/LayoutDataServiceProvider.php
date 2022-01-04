@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Categorie;
+use App\Models\ProfilePicture;
+use Illuminate\Support\Facades\Auth;
 
 class LayoutDataServiceProvider extends ServiceProvider
 {
@@ -27,15 +29,10 @@ class LayoutDataServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-    
         view()->composer('*', function($view) {
             $categories = Categorie::all();
             $view->with(['categories' => $categories]);
         });
 
-        
-        // view()->composer('layouts.app', function($view) {
-        //     $view;
-        // });
     }
 }

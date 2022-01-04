@@ -1,0 +1,24 @@
+.user-settings {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.profile-picture-menu {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: rgb(223, 217, 217);
+    display: flex;
+}
+
+.picture-menu {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-picture-menu h3 {
+    margin: 1rem 0;
+}
+

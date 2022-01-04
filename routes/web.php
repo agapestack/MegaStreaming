@@ -26,10 +26,11 @@ Route::get('/home/{category_name}', [App\Http\Controllers\HomeController::class,
 Route::get('/user/{name}', [App\Http\Controllers\HomeController::class, 'getUserVideos']);
 
 // User Route
-Route::get('/profile', [App\Http\Controllers\UserController::class, 'index']);
+Route::get('/profile', [App\Http\Controllers\UserController::class, 'home']);
+Route::post('/profile_picture', [App\Http\Controllers\UserController::class, 'uploadProfilePicture']);
 
-Route::post('/uploadVideo', [App\Http\Controllers\VideoController::class, 'uploadVideo']);
 Route::get('/video/{uuid}', [App\Http\Controllers\VideoController::class, 'getVideoByUuid']);
+Route::post('/uploadVideo', [App\Http\Controllers\VideoController::class, 'uploadVideo']);
 
 Route::get('/search', [App\Http\Controllers\VideoController::class, 'getSearchResults']);
 

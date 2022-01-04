@@ -22,9 +22,10 @@
     <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('css/videoPlayer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/userVideos.css') }}" rel="stylesheet">
     <link href="{{ asset('css/search.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/userVideos.css') }}" rel="stylesheet">
+    @stack('userStyle')
 
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,7 +111,8 @@
                             @endif
                         @else
                             <a class="btn btn-auth btn-outline-light"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="#">
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                href="{{ route('logout') }}">
                                 <i class="fas fa-sign-out-alt">
                                     {{-- {{ __('Logout') }} --}}
                                 </i>
@@ -120,8 +122,6 @@
                                     @csrf
                                 </form>
                             </a>
-
-
 
                             {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -151,8 +151,13 @@
                                 {{-- TRIGGERNAV
                                     <i onclick="triggerSideNav()" class="far fa-square" id="triggerChevron"></i> --}}
                             </div>
-                            <div class="user-picture">
-                                <i class="fas fa-user-astronaut"></i>
+                            <a class="user-picture" href="/profile">
+                                @if (@isset($profile_picture[0]))
+                                    <img class="pp" src="{{ asset('storage/' . $profile_picture[0]->path) }}"
+                                        alt="">
+                                @else
+                                    <i class="far fa-user pp"></i>
+                                @endif
                                 <h5 class="username">
                                     {{ Auth::user()->name }}
                                 </h5>
@@ -160,18 +165,22 @@
                                     <div class="videoCount">
 
                                     </div> --}}
-                            </div>
+                            </a>
                             <div class="site-videos side-menu">
                                 <a href="/home" class="btn btn-light">
                                     Recommandations
                                 </a>
-
                             </div>
                             <div class="user-videos side-menu">
                                 <a href="/user/{{ auth()->user()->name }}" class="btn btn-light">
                                     Mes Vidéos
                                 </a>
                             </div>
+                            {{-- <div class="side-menu user-space">
+                                <a href="/profile" class="btn btn-light">
+                                    Mon Profile
+                                </a>
+                            </div> --}}
 
                             <div class="user-upload side-menu">
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
