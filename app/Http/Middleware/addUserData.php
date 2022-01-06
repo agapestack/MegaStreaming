@@ -23,7 +23,7 @@ class addUserData
         Log::info("passing in addUserData middleware");
         if(Auth::check()) {
             view()->composer('*', function($view) {
-                $profile_picture = ProfilePicture::where('user_id', '=', Auth::id())->first()->get();
+                $profile_picture = ProfilePicture::where('user_id', '=', Auth::id())->first();
                 $view->with(['profile_picture' => $profile_picture]);
             });
         }
