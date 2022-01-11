@@ -23,30 +23,28 @@
 
     {{-- Welcome Page d'Elise --}}
     <div class="welcome-container">
-        <section id="hero">
-            <div class="section-container">
-                <div class="hero">
-                    <h1>Apprendre ou vous divertir, ne cherchez plus, Megastreamez.</h1>
-                    <h2>
-                        Une plateforme pour partager vos vidéos ou pour en consommer
-                        <br />
-                        Rejoignez-nous maintenant
-                    </h2>
-                    {{-- <button type="button" class="btn btn-primary">Créer un compte</button>
+        <section class="welcome-one">
+            <div class="welcome-item">
+                <h1>Apprendre ou vous divertir, ne cherchez plus, Megastreamez.</h1>
+                <h2>
+                    Une plateforme pour partager vos vidéos ou pour en consommer
+                    <br />
+                    Rejoignez-nous maintenant
+                </h2>
+                {{-- <button type="button" class="btn btn-primary">Créer un compte</button>
                 <button type="button" class="btn btn-primary">Se connecter</button> --}}
-                    <a href="{{ route('login') }}" role="button" class="btn btn-primary btn-redirect-auth">
-                        Connectez-Vous
-                    </a>
-                    <a href="{{ route('login') }}" role="button" class="btn btn-primary btn-redirect-auth">
-                        Inscrivez-Vous
-                    </a>
-                </div>
-
+                <a href="{{ route('login') }}" role="button" class="btn btn-primary btn-redirect-auth">
+                    Connectez-Vous
+                </a>
+                <a href="{{ route('login') }}" role="button" class="btn btn-primary btn-redirect-auth">
+                    Inscrivez-Vous
+                </a>
             </div>
         </section>
+        <hr class="welcome-rounded" />
         <section>
-            <div class="section-container">
-                <div class="txt">
+            <div class="welcome-bx">
+                <div class="welcome-txt">
                     <h1>
                         Une interface simple, l'accés à vos contenus à porté de main
                     </h1>
@@ -64,12 +62,13 @@
                 </div>
             </div>
         </section>
+        <hr class="welcome-rounded" />
         <section>
-            <div class="section-container">
+            <div class="welcome-box">
                 <div>
                     <img src="#" alt="" id="imgp3" />
                 </div>
-                <div class="item txt">
+                <div class="welcome-item welcome-txt">
                     <h1>Uploadez vos vidéos depuis votre interface utilisateur</h1>
                     <h3>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
@@ -83,9 +82,10 @@
                 </div>
             </div>
         </section>
+        <hr class="welcome-rounded" />
         <section>
-            <div class="section-container">
-                <div class="txt">
+            <div class="welcome-bx">
+                <div class="welcome-txt">
                     <h1>Un catalogue qui correspond à chacun</h1>
                     <h3>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -96,9 +96,10 @@
                         exercitationem magnam. In, autem id.
                     </h3>
                 </div>
-                <div><img src="#" alt="" /></div>
+                <div><img src="/assets/img/image4.png" alt="" /></div>
             </div>
         </section>
+        <hr class="welcome-rounded" />
         <section class="footer section-container">
             <p>
                 Copyright © 2021. Megastream. Tous droits réservés.
@@ -107,12 +108,5 @@
             </p>
         </section>
     </div>
-
-    {{-- JS Elise Welcome --}}
-    <script>
-        var i;
-        var toggle = document.getElementById("label");
-        const pages = document.querySelectorAll("section");
-    </script>
 
 @endsection
