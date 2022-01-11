@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,8 +30,12 @@ Route::get('/user/{name}', [App\Http\Controllers\HomeController::class, 'getUser
 Route::get('/profile', [App\Http\Controllers\UserController::class, 'home']);
 Route::post('/profile_picture', [App\Http\Controllers\UserController::class, 'uploadProfilePicture']);
 
-Route::get('/video/{uuid}', [App\Http\Controllers\VideoController::class, 'getVideoByUuid']);
-Route::post('/uploadVideo', [App\Http\Controllers\VideoController::class, 'uploadVideo']);
+Route::get('/video/{uuid}', [VideoController::class, 'getVideoByUuid']);
+Route::post('/uploadVideo', [VideoController::class, 'uploadVideo']);
 
-Route::get('/search', [App\Http\Controllers\VideoController::class, 'getSearchResults']);
+Route::get('/search', [VideoController::class, 'getSearchResults']);
+
+Route::put('/video/toggleLike/{video}', [VideoController::class, 'toggleVideoLike'])
+    ->name('video.toggleLike')
+    ->middleware('auth');
 

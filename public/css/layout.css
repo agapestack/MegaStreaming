@@ -75,19 +75,23 @@ main {
 
 /* USER NAV (side nav) */
 #side-nav {
-  display: flex;
-  flex-direction: column;
-  max-width: 17vw;
-  min-height: calc(100vh - 64px);
-  height: 100%;
-  width: 100%;
-  /* box-shadow: 1px 0 darkgray; */
-  box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.41);
-  border-radius: 10px;
-  transition: width;
-  transition-duration: 1s;
-  transition-delay: 0s !important;
-  transition-timing-function: ease-in-out;
+  display: none; /* en attendant de savoir comment faire sur mobile */
+}
+@media(min-width: 768px) {
+  #side-nav {
+    display: flex;
+    flex-direction: column;
+    max-width: 17vw;
+    min-height: calc(100vh - 64px);
+    height: 100%;
+    width: 100%;
+    /* box-shadow: 1px 0 darkgray; */
+    box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.41);
+    transition: width;
+    transition-duration: 1s;
+    transition-delay: 0s !important;
+    transition-timing-function: ease-in-out;
+  }
 }
 
 .triggerNav-container i {

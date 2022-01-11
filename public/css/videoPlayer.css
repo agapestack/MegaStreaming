@@ -1,10 +1,46 @@
-#video-player {
-    min-height: calc(100vh - 64px);
+.video-container {
+    width: 100%;
+    padding: 8px;
 }
 
-.video-container {
-    width: 80%;
-    margin: 0 auto;
+.video-desc {
+    width: 100%;
+    margin: 0 0 24px;
+}
+
+.desc-wrapper {
+    padding: 8px;
+    margin: 0 auto 40px;
+}
+
+@media(min-width: 768px) {
+    .video-container {
+        width: 80%;
+        margin: 48px auto;
+    }
+
+    .desc-wrapper {
+        width: 80%;
+    }
+    .video-desc {
+        width: 100%;
+    }
+}
+
+.bootstrap-card {
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative
+}
+
+#likeStatus {
+    cursor: pointer;
 }
 
 /* make video-js fit container */

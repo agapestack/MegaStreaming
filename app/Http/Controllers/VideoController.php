@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\ConvertVideoForStreaming;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -50,8 +51,9 @@ class VideoController extends Controller
     {
         // Log::info($uuid);
 
-        $video = Video::where('uuid', $uuid)->first();
-
+        $video = Video::with(['author', 'users'])
+            ->where('uuid', $uuid)
+            ->firstOrFail();
         Log::info($video);
 
         return view('videoPlayer', ['video' => $video]);
@@ -89,5 +91,21 @@ class VideoController extends Controller
 
 
         return view('searchResults', ['videos' => $videoCollection]);
+    }
+
+    public function toggleVideoLike(Request $request, Video $video)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+        if ($video->likedByUser($user)) {
+           $video->users()->detach([$user->id]);
+        } else {
+            $video->users()->attach([$user->id]);
+        }
+
+        return response()->json([
+            'liked' => $video->likedByUser($user),
+            'numberOfLikes' => $video->users()->count()
+        ]);
     }
 }
