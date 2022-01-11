@@ -22,8 +22,8 @@
         <div class="profile-picture-menu">
             {{-- Profil Picture || default profile picture --}}
             <div class="picture">
-                @if (@isset($profile_picture[0]))
-                    <img class="pp" src="{{ asset('storage/' . $profile_picture[0]->path) }}" alt="">
+                @if (@isset(Auth::user()->profile_picture->path))
+                    <img class="pp" src="{{ asset('storage/' . Auth::user()->profile_picture->path) }}" alt="">
                 @else
                     <i class="far fa-user pp"></i>
                 @endif

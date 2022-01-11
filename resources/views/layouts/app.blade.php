@@ -152,8 +152,8 @@
                                     <i onclick="triggerSideNav()" class="far fa-square" id="triggerChevron"></i> --}}
                             </div>
                             <a class="user-picture" href="/profile">
-                                @if (@isset($profile_picture[0]))
-                                    <img class="pp" src="{{ asset('storage/' . $profile_picture[0]->path) }}"
+                                @if (@isset(Auth::user()->profile_picture->path))
+                                    <img class="pp" src="{{ asset('storage/' . Auth::user()->profile_picture->path) }}"
                                         alt="">
                                 @else
                                     <i class="far fa-user pp"></i>

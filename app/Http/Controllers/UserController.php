@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ProfilePicture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -28,7 +29,7 @@ class UserController extends Controller
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        // Delete existing profile picture if exist
+        // Delete potential existing pp
         $pp = ProfilePicture::where('user_id', '=', Auth::id())->delete();
 
         // Uploading new profile picture
@@ -37,12 +38,11 @@ class UserController extends Controller
                 'profile_picture', Auth::id()
             );
             $profile_picture = new ProfilePicture([
-                "user_id" =>  Auth::id(),
+                "user_id" => Auth::id(),
                 "path" => $path,
             ]);
 
             // saving to db
-
             $profile_picture->save();
         }
 

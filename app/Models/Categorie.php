@@ -9,4 +9,8 @@ class Categorie extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+
+    protected $fillable = [
+
+    ];
 }

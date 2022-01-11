@@ -16,8 +16,8 @@ class CreateProfilePicturesTable extends Migration
         Schema::create('profile_pictures', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->delete('cascade');
             $table->string('disk')->default('local');
             $table->string('path');
         });
