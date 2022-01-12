@@ -128,9 +128,6 @@ main {
 }
 
 .pp {
-  width: 96px;
-  height: 96px;
-  font-size: 96px;
   border-radius: 9000px !important;
   margin: 1rem 0;
 }
