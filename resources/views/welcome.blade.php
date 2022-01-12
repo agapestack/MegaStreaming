@@ -49,12 +49,12 @@
                         Une interface simple, l'accés à vos contenus à porter de main
                     </h1>
                     <h3>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
-                        minus optio tempore, quos vel, natus veritatis ex nulla accusamus
-                        facere veniam! Vitae deleniti reprehenderit aperiam maxime
-                        architecto provident odit odio molestias maiores autem ea
-                        molestiae cupiditate, velit, dignissimos repellendus!
-                        Exercitationem a eligendi neque. Et, nemo.
+                        Laissez-vous tenter par les vidéos que nous avons
+                        sélectionné pour vous, tout ça sur votre page
+                        d'accueil ! Tout ce que vous cherchez est disponible
+                        en une page ou rangé par catégorie. Si ça ne vous
+                        convient pas utilisez directement la barre de
+                        recherche rien de plus simple .
                     </h3>
                 </div>
                 <div>
@@ -71,13 +71,13 @@
                 <div class="welcome-item welcome-txt">
                     <h1>Uploadez vos vidéos depuis votre interface utilisateur</h1>
                     <h3>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-                        excepturi rerum animi voluptatum pariatur fuga quo dicta,
-                        consequuntur dignissimos dolorem ullam aperiam ut id blanditiis
-                        mollitia impedit illum possimus, iure minus error temporibus
-                        exercitationem dolor. Numquam vitae minima nemo, labore quae,
-                        quisquam sit, vero perspiciatis possimus tempora placeat amet
-                        nostrum.
+                        Pour partager vos vidéos rien de plus simple, nous
+                        avons tout prévu pour vous. Votre interface
+                        personnelle permettant l'accès aux vidéos que vous
+                        avez partagé et le partage de vos vidéos sur nos
+                        plateformes. Un titre, une description, votre
+                        fichier, une catégorie et hop tout nos utilisateurs
+                        peuvent profiter de votre vidéo !
                     </h3>
                 </div>
             </div>
@@ -86,14 +86,13 @@
         <section>
             <div class="welcome-bx">
                 <div class="welcome-txt">
-                    <h1>Un catalogue qui correspond à chacun</h1>
+                    <h1>Un catalogue qui vous correspond</h1>
                     <h3>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Quibusdam, fuga, magnam obcaecati facere temporibus officiis odio
-                        illo, veritatis dolore enim voluptate adipisci earum quis
-                        consequuntur magni quasi? Dignissimos quidem, sed excepturi
-                        corporis quae maxime fuga, nihil animi saepe repellendus enim
-                        exercitationem magnam. In, autem id.
+                        Ne vous inquiétez pas! Vous n'avez pas les mêmes
+                        intêrets que votre famille ? Pas de soucis, avec la
+                        diversité de contenu que nous vous proposons, vous
+                        pouvez trouver de quoi plaire à chaque membre de
+                        votre famille.
                     </h3>
                 </div>
                 <div><img src="/assets/img/image4.png" alt="" /></div>
