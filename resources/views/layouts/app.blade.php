@@ -111,8 +111,7 @@
                             @endif
                         @else
                             <a class="btn btn-auth btn-outline-light"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                href="{{ route('logout') }}">
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt">
                                     {{-- {{ __('Logout') }} --}}
                                 </i>
@@ -153,7 +152,7 @@
                             </div>
                             <a class="user-picture" href="/profile">
                                 @if (@isset(Auth::user()->profile_picture->path))
-                                    <img class="pp" src="{{ asset('storage/' . Auth::user()->profile_picture->path) }}"
+                                    <img class="img-pp" src="{{ asset('storage/' . Auth::user()->profile_picture->path) }}"
                                         alt="">
                                 @else
                                     <i class="far fa-user pp"></i>

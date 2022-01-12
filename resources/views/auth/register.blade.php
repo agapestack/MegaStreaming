@@ -4,11 +4,11 @@
     <div class="auth-container">
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header text-center">
                 {{ __('Inscription') }}
             </div>
 
-            <div class="card-body">
+            <div class="card-body pt-4">
                 <div class="form-container">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -45,7 +45,7 @@
 
                         <div class="form-group row">
                             <label for="password"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                class="col-md-4 col-form-label text-md-right">Mot de passe</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password"
@@ -62,7 +62,7 @@
 
                         <div class="form-group row">
                             <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                class="col-md-4 col-form-label text-md-right">Confirmez le mot de passe</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
@@ -72,9 +72,9 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
-                                <div class="submit-wrapper">
+                                <div class="submit-wrapper d-flex flex-column align-items-center justify-content-center">
                                     <button type="submit" class="btn btn-primary text-md-center">
-                                        {{ __('Inscription') }}
+                                        Inscription
                                     </button>
     
                                     <a class="btn btn-link text-md-center"  href="{{ route('login') }}">

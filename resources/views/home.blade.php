@@ -7,7 +7,8 @@
             {{-- @if (Request::get('category_name')) --}}
             @if (isset($category_name))
                 <div class="category-wrapper">
-                    <h1>{{ mb_strtoupper($category_name) }}</h1>
+                    <h1 class="font-weight-bold">{{ mb_strtoupper($category_name) }}</h1>
+
                     <a href="/home">
                         <i class="fas fa-home"></i>
                     </a>

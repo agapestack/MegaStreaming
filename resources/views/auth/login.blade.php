@@ -4,11 +4,11 @@
     <div class="auth-container">
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header text-center">
                 {{ __('Connexion') }}
             </div>
 
-            <div class="card-body">
+            <div class="card-body pt-4">
                 <div class="form-container">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -59,7 +59,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
-                                <div class="submit-wrapper">
+                                <div class="submit-wrapper d-flex flex-column align-items-center justify-content-center">
                                     <button type="submit" class="btn btn-primary text-md-center">
                                         {{ __('Connexion') }}
                                     </button>
