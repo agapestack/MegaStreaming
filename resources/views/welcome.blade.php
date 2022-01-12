@@ -46,7 +46,7 @@
             <div class="welcome-bx">
                 <div class="welcome-txt">
                     <h1>
-                        Une interface simple, l'accés à vos contenus à porté de main
+                        Une interface simple, l'accés à vos contenus à porter de main
                     </h1>
                     <h3>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
@@ -58,15 +58,15 @@
                     </h3>
                 </div>
                 <div>
-                    <img src="#" alt="" id="imgp2" />
+                    <img src="{{asset("assets/img/img5.png")}}" alt="" id="imgp2" />
                 </div>
             </div>
         </section>
         <hr class="welcome-rounded" />
         <section>
-            <div class="welcome-box">
+            <div class="welcome-bx">
                 <div>
-                    <img src="#" alt="" id="imgp3" />
+                    <img src="{{asset("assets/img/image3.png")}}" alt="" id="imgp3" />
                 </div>
                 <div class="welcome-item welcome-txt">
                     <h1>Uploadez vos vidéos depuis votre interface utilisateur</h1>
