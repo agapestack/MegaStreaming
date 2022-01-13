@@ -5,23 +5,6 @@
     @push('welcome')
         <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
     @endpush
-
-    {{-- @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}"
-                        class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif --}}
-
-    {{-- Welcome Page d'Elise --}}
     <div class="welcome-container">
         <section class="welcome-one">
             <div class="welcome-item">
@@ -31,8 +14,6 @@
                     <br />
                     Rejoignez-nous maintenant
                 </h2>
-                {{-- <button type="button" class="btn btn-primary">Créer un compte</button>
-                <button type="button" class="btn btn-primary">Se connecter</button> --}}
                 <a href="{{ route('login') }}" role="button" class="btn btn-primary btn-redirect-auth">
                     Connectez-Vous
                 </a>
@@ -46,15 +27,11 @@
             <div class="welcome-bx">
                 <div class="welcome-txt">
                     <h1>
-                        Une interface simple, l'accés à vos contenus à porter de main
+                        Une interface intuitive
                     </h1>
                     <h3>
-                        Laissez-vous tenter par les vidéos que nous avons
-                        sélectionné pour vous, tout ça sur votre page
-                        d'accueil ! Tout ce que vous cherchez est disponible
-                        en une page ou rangé par catégorie. Si ça ne vous
-                        convient pas utilisez directement la barre de
-                        recherche rien de plus simple .
+                        Laissez-vous tenter par les vidéos que nous avons sélectionné pour vous, tout ça sur votre page d'accueil !
+                        Disponible en une page ou par categorie.
                     </h3>
                 </div>
                 <div>
@@ -66,18 +43,13 @@
         <section>
             <div class="welcome-bx">
                 <div>
-                    <img src="{{asset("assets/img/image3.png")}}" alt="" id="imgp3" />
+                    <img src="{{asset("assets/img/image3.jpg")}}" alt="" id="imgp3" />
                 </div>
                 <div class="welcome-item welcome-txt">
-                    <h1>Uploadez vos vidéos depuis votre interface utilisateur</h1>
+                    <h1>Uploadez vos vidéos en un clic !</h1>
                     <h3>
-                        Pour partager vos vidéos rien de plus simple, nous
-                        avons tout prévu pour vous. Votre interface
-                        personnelle permettant l'accès aux vidéos que vous
-                        avez partagé et le partage de vos vidéos sur nos
-                        plateformes. Un titre, une description, votre
-                        fichier, une catégorie et hop tout nos utilisateurs
-                        peuvent profiter de votre vidéo !
+                        Un titre, votre video, un clic.
+                        <br>Partagez votre création avec tous vos amis
                     </h3>
                 </div>
             </div>
@@ -86,16 +58,13 @@
         <section>
             <div class="welcome-bx">
                 <div class="welcome-txt">
-                    <h1>Un catalogue qui vous correspond</h1>
+                    <h1>Un catalogue qui correspond à chacun</h1>
                     <h3>
-                        Ne vous inquiétez pas! Vous n'avez pas les mêmes
-                        intêrets que votre famille ? Pas de soucis, avec la
-                        diversité de contenu que nous vous proposons, vous
-                        pouvez trouver de quoi plaire à chaque membre de
-                        votre famille.
+                        Avec la diversité de contenu que nous vous proposons,
+                        vous pourrez trouver de quoi plaire à chaque membre de votre famille.
                     </h3>
                 </div>
-                <div><img src="/assets/img/image4.png" alt="" /></div>
+                <div><img src="/assets/img/image4.png" alt="imgp4" /></div>
             </div>
         </section>
         <hr class="welcome-rounded" />
