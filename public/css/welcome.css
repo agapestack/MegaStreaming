@@ -60,9 +60,12 @@ hr.rounded {
 }
 
 .welcome-txt {
+  display: flex;
+  flex-direction: column ;
   height: 400px;
   width: 50%;
-  text-align: justify;
+  text-align: middle;
+  justify-content: center;
 }
 
 .welcome-bx img {
